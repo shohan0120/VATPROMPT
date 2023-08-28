@@ -14,9 +14,9 @@ public class login extends BaseDriver {
 		driver.get("http://192.168.10.15:81/LogIn.aspx");
 		
 		DriverUtility util = new DriverUtility(driver);
-		util.InputeIdValue("ContentPlaceHolder1_txtUserId", "tcl");
+		util.InputIdValue("ContentPlaceHolder1_txtUserId", "tcl");
 	
-		util.InputeIdValue("ContentPlaceHolder1_txtPassword", "123");
+		util.InputIdValue("ContentPlaceHolder1_txtPassword", "123");
 
 		
 		WebElement login = driver.findElement(By.id("ContentPlaceHolder1_btnLogin"));
@@ -26,8 +26,7 @@ public class login extends BaseDriver {
 		util.selectByVisibleBothText("ContentPlaceHolder1_drpSchema", "Runners Motors Limited");
 
         
-        WebElement gotobutton = driver.findElement(By.id("ContentPlaceHolder1_btnBusinessUnit"));
-		gotobutton.click();
+        util.GoButtonId("ContentPlaceHolder1_btnBusinessUnit");
 		
 		WebElement controlpanel = driver.findElement(By.className("title1"));
 		controlpanel.click();
@@ -35,29 +34,28 @@ public class login extends BaseDriver {
 		//ADDPARTY
 		
 		
-		WebElement addparty = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/form[1]/div[3]/div[2]/div[1]/div[2]/div[1]/a[6]"));
-		addparty.click();
+		util.GoButtonId("MainContent_HyperLink6");  //AddPartyClick button
 		Thread.sleep(1000);
 		
-		
-		WebElement registrationType = driver.findElement(By.id("MainContent_drpRegistrationType"));
-        Select select2 = new Select(registrationType);
-        select2.selectByValue("4"); 
+		util.selectByIdValue("MainContent_drpRegistrationType", "8"); //Registration Type
         
 		
-        util.InputeIdValue("MainContent_txtPartyBIN", "1236547896325");
-    
+        util.InputIdValue("MainContent_txtPartyBIN", "1236547896325"); //Party Bin
         
         
-		WebElement businessInfo = driver.findElement(By.id("MainContent_drpBusinessInfo"));
-		Select select3 = new Select(businessInfo);
-        select3.selectByValue("5");
+        util.selectByIdValue("MainContent_drpBusinessInfo", "5");      //Business Info
         
+        util.InputCssValue("#MainContent_txtPartyName","ABC LTD1");     //Party Name
+       
+        util.InputnameValue("ctl00$MainContent$txtNationalIdNo", "12345678936985214");  //National Id No
+
+        util.selectRadioButtonByIdValue("MainContent_isVc","isVc");
         
-        WebElement partyName = driver.findElement(By.id("MainContent_txtPartyName"));
-        partyName.click();
-        partyName.sendKeys("ABC LTD");
-        Thread.sleep(20000);
+        util.GoButtonId("MainContent_btnSave");
+     
+        Thread.sleep(50000);
+        
+
 
         
 
