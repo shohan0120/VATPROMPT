@@ -25,7 +25,9 @@ public class DriverUtility {
 	public void selectById(String Id) {                        //For Finding Id & Click
 		WebElement button = driver.findElement(By.id(Id));
 		button.click();
-     }
+	}
+	
+
 	public void InputIdValue(String id, String inputValue) {    //For TextBox
 		WebElement element = driver.findElement(By.id(id));
 		element.sendKeys(inputValue);
@@ -34,7 +36,7 @@ public class DriverUtility {
 		WebElement element = driver.findElement(By.name(name));
 		element.sendKeys(inputValue);
 	}
-		public void InputCssValue(String css, String inputvalue) {       //For TextBox CSS
+	public void InputCssValue(String css, String inputvalue) {       //For TextBox CSS
 			WebElement element = driver.findElement(By.cssSelector(css));
 			element.sendKeys(inputvalue);
 	}

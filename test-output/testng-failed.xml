@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.technohaven.bd.VATPROMPT_Test.login">
+      <class name="com.technohaven.bd.VATPROMPT_Test.GoodsServiceSetup">
         <methods>
           <include name="start"/>
-          <include name="userLogin"/>
           <include name="close"/>
+          <include name="GOODSSERVICESETUPMETHOD"/>
         </methods>
-      </class> <!-- com.technohaven.bd.VATPROMPT_Test.login -->
+      </class> <!-- com.technohaven.bd.VATPROMPT_Test.GoodsServiceSetup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
