@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class GoodsServiceSetup extends BaseDriver 
 {
 	@Test
-	public void GOODSSERVICESETUPMETHOD() throws InterruptedException
+	public void GoodsServiceSetupMethod() throws InterruptedException
 	{
 		driver.manage().window().maximize();
 		driver.get("http://192.168.10.15:81/LogIn.aspx");
@@ -53,7 +53,7 @@ public class GoodsServiceSetup extends BaseDriver
         util.selectByIdValue("MainContent_drpItemCategory","1237"); //Category Name Dropdown value select
         Thread.sleep(2000);
         
-        util.InputIdValue("MainContent_txtItemName", "Automation Item 1"); //Item Name TextBox
+        util.InputIdValue("MainContent_txtItemName", "Automation Item 2"); //Item Name TextBox
         Thread.sleep(2000);
         
         util.selectByIdValue("MainContent_drpProductType","F"); //Product Type-> Item-> Goods select
@@ -65,7 +65,7 @@ public class GoodsServiceSetup extends BaseDriver
         util.selectByIdValue("MainContent_drpUnit","1"); //Unit Dropdown value Select 
         Thread.sleep(2000);
         
-        util.selectByIdValue("MainContent_drpHSCode","73"); //HS Code Dropdown Value value Select 
+        util.selectByIdValue("MainContent_drpHSCode","3130"); //HS Code Dropdown Value value Select
         Thread.sleep(2000);
         
         util.selectById("MainContent_chkIsTruncated"); //Reduced Checkbox click 

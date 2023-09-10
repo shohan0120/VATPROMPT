@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseDriver {
 
-	WebDriver driver = null;
+	static WebDriver driver = null;
 	
 	@BeforeSuite
 	public void start() {
